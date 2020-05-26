@@ -6,4 +6,4 @@ This program allows me to graph different parameters (core temperature, clock sp
 - Pandas
 
 #### Screenshots
-![ScreenShot](screenOne.png)
+![ScreenShot](screenOne.PNG)
