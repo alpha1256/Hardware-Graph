@@ -4,3 +4,6 @@ This program allows me to graph different parameters (core temperature, clock sp
 ### Prerequisite 
 - Plotly
 - Pandas
+
+#### Screenshots
+![ScreenShot](screenOne.png)
