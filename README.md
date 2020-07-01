@@ -1,5 +1,5 @@
 # Hardware-Graph
-This program allows me to graph different parameters (core temperature, clock speed etc) of my computer hardware from the csv file from Open hardware monitor.
+This program allows users to graph different parameters (core temperature, clock speed etc) of a users computer hardware from the csv file from Open Hardware Monitor monitor.
 
 ### Prerequisite 
 - Plotly
