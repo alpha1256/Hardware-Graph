@@ -5,7 +5,13 @@ from gpu_load import plotGPULoad
 
 def main():
 	userIn =input('Enter filename to read from: ')
-	nameOfGame = input('Enter the name of this game: ')
+	nameOfGame = input("Enter the name of this game: ")
+	print("\nName of game: " + nameOfGame)
+	#nameOfGameList = list(map(int, input('Enter the name of this game: ').split()))
+	#nameOfGame = ""
+	#for counter in range(len(nameOfGameList)):
+	#	nameOfGame += nameOfGameList[counter] + " " 
+
 
 	#print("Enter 1 For CPU Temp\nEnter 2 for GPU Temp\nEnter any other key to exit: ")
 	try:
