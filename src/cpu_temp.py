@@ -2,7 +2,7 @@ import plotly.graph_objs as go
 import plotly.offline as ply
 import pandas as pd
 
-def plotCPUTemp(filename):
+def plotCPUTemp(filename, nameofGame):
 	filecsv = pd.read_csv(filename)
 	cpuZero=filecsv['/intelcpu/0/temperature/0']
 	cpuOne = filecsv['/intelcpu/0/temperature/1']
@@ -27,9 +27,9 @@ def plotCPUTemp(filename):
 	traceOne = go.Scatter(y = cpu1, x = time, mode = 'lines+markers', name='CPU One')
 	traceTwo = go.Scatter(y = cpu2, x = time, mode = 'lines+markers', name='CPU Two')
 	traceThree = go.Scatter(y = cpu3, x = time, mode = 'lines+markers', name='CPU Three')
-	name = "Escape From Tarkov"
+	name = nameofGame
 	layout = dict(title = name, xaxis = dict(title = "Time"), yaxis = dict(title ="CPU Temp in C"))
 	data =[traceZero, traceOne, traceTwo, traceThree]
 	figure = dict(data = data, layout = layout)
-	ply.plot(figure, filename = 'CpuTemp.html')
+	ply.plot(figure, filename = name + '_CPU_Temp.html')
 

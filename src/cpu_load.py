@@ -2,7 +2,7 @@ import plotly.graph_objs as go
 import plotly.offline as ply
 import pandas as pd
 
-def plotCPULoad(filename):
+def plotCPULoad(filename,nameOfGame):
 	filecsv = pd.read_csv(filename)
 	cpuZero=filecsv['/intelcpu/0/load/1']
 	cpuOne = filecsv['/intelcpu/0/load/2']
@@ -27,8 +27,8 @@ def plotCPULoad(filename):
 	traceOne = go.Scatter(y = cpu1, x = time, mode = 'lines+markers', name='CPU One')
 	traceTwo = go.Scatter(y = cpu2, x = time, mode = 'lines+markers', name='CPU Two')
 	traceThree = go.Scatter(y = cpu3, x = time, mode = 'lines+markers', name='CPU Three')
-	name = "Escape From Tarkov"
+	name = nameOfGame
 	layout = dict(title = name, xaxis = dict(title = "Time"), yaxis = dict(title ="CPU Load"))
 	data =[traceZero, traceOne, traceTwo, traceThree]
 	figure = dict(data = data, layout = layout)
-	ply.plot(figure, filename = 'CpuLoad.html')
+	ply.plot(figure, filename = name +'_CPU_Load.html')
