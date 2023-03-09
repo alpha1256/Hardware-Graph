@@ -2,12 +2,12 @@ import plotly.graph_objs as go
 import plotly.offline as ply
 import pandas as pd
 
-def plotCPUTemp(filename):
+def plotCPULoad(filename):
 	filecsv = pd.read_csv(filename)
-	cpuZero=filecsv['/intelcpu/0/temperature/0']
-	cpuOne = filecsv['/intelcpu/0/temperature/1']
-	cpuTwo = filecsv['/intelcpu/0/temperature/2']
-	cpuThree = filecsv['/intelcpu/0/temperature/3']
+	cpuZero=filecsv['/intelcpu/0/load/1']
+	cpuOne = filecsv['/intelcpu/0/load/2']
+	cpuTwo = filecsv['/intelcpu/0/load/3']
+	cpuThree = filecsv['/intelcpu/0/load/4']
 	cpu0 =[]
 	cpu1 =[]
 	cpu2 =[]
@@ -17,10 +17,10 @@ def plotCPUTemp(filename):
 		if counter ==0:
 			continue
 		else:
-			cpu0.append(int(cpuZero[counter]))
-			cpu1.append(int(cpuOne[counter]))
-			cpu2.append(int(cpuTwo[counter]))
-			cpu3.append(int(cpuThree[counter]))
+			cpu0.append(float(cpuZero[counter]))
+			cpu1.append(float(cpuOne[counter]))
+			cpu2.append(float(cpuTwo[counter]))
+			cpu3.append(float(cpuThree[counter]))
 			time.append(counter)
 
 	traceZero = go.Scatter(y = cpu0, x = time, mode = 'lines+markers', name='CPU Zero')
@@ -28,8 +28,7 @@ def plotCPUTemp(filename):
 	traceTwo = go.Scatter(y = cpu2, x = time, mode = 'lines+markers', name='CPU Two')
 	traceThree = go.Scatter(y = cpu3, x = time, mode = 'lines+markers', name='CPU Three')
 	name = "Escape From Tarkov"
-	layout = dict(title = name, xaxis = dict(title = "Time"), yaxis = dict(title ="CPU Temp in C"))
+	layout = dict(title = name, xaxis = dict(title = "Time"), yaxis = dict(title ="CPU Load"))
 	data =[traceZero, traceOne, traceTwo, traceThree]
 	figure = dict(data = data, layout = layout)
-	ply.plot(figure, filename = 'CpuTemp.html')
-
+	ply.plot(figure, filename = 'CpuLoad.html')
