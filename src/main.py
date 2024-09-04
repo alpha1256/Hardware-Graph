@@ -2,6 +2,7 @@ from cpu_temp import plotCPUTemp
 from gpu_temp import plotGPUTemp
 from cpu_load import plotCPULoad
 from gpu_load import plotGPULoad
+import logging
 
 def main():
 	userIn =input('Enter filename to read from: ')
@@ -27,8 +28,8 @@ def main():
 			plotGPULoad(userIn,nameOfGame)
 		else:
 			print("Thank you and have a nice day")
-	except:
-		print("An error occured")
+	except Exception as Argument: 
+		logging.exception("An Error has occured") 
 
 if __name__ == '__main__':
 	main()
