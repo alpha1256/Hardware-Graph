@@ -5,14 +5,17 @@ import pandas as pd
 def plotGPULoad(filename, nameofGame):
 	filecsv = pd.read_csv(filename)
 	gpuTemp = filecsv['/nvidiagpu/0/load/0']
+	testTime = filecsv['/time']
 	gpu=[]
 	time=[]
+	testTim = []
 	for counter in range(len(gpuTemp)):
 		if counter ==0:
 			continue
 		else:
 			gpu.append(int(gpuTemp[counter]))
-			time.append(counter)
+			#time.append(counter)
+			time.append(testTime[counter])
 
 	traceZero = go.Scatter(y = gpu, x = time, mode = 'lines+markers', name='Main GPU')
 	
