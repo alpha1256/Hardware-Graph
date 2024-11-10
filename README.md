@@ -5,5 +5,12 @@ This program allows users to graph different parameters (core temperature, clock
 - Plotly
 - Pandas
 
+#### Current Implementation
+- CPU Load
+- CPU Temp
+- GPU Temp
+- GPU Load
+- RAM Load
+
 #### Screenshots
 ![ScreenShot](screenOne.PNG)
