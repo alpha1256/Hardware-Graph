@@ -11,6 +11,7 @@ This program allows users to graph different parameters (core temperature, clock
 - GPU Temp
 - GPU Load
 - RAM Load
+- Fan Speed
 
 #### Screenshots
 ![ScreenShot](screenOne.PNG)
