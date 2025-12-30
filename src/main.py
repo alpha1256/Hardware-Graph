@@ -3,6 +3,7 @@ from gpu_temp import plotGPUTemp
 from cpu_load import plotCPULoad
 from gpu_load import plotGPULoad
 from ram_load import plotRAMLoad
+from fan_speed import fanSpeedPlot
 import logging
 
 def main():
@@ -17,7 +18,7 @@ def main():
 
 	#print("Enter 1 For CPU Temp\nEnter 2 for GPU Temp\nEnter any other key to exit: ")
 	try:
-		userInput = input("Enter 1 For CPU Temp\nEnter 2 for GPU Temp\nEnter 3 for CPU Load\nEnter 4 for GPU Load\nEnter 5 for RAM Load\nEnter any other key to exit: ")
+		userInput = input("Enter 1 For CPU Temp\nEnter 2 for GPU Temp\nEnter 3 for CPU Load\nEnter 4 for GPU Load\nEnter 5 for RAM Load\nEnter 6 for Fan Speed\nEnter any other key to exit: ")
 		print(userInput)
 		if userInput == '1':
 			plotCPUTemp(userIn,nameOfGame)
@@ -29,6 +30,8 @@ def main():
 			plotGPULoad(userIn,nameOfGame)
 		elif userInput == '5':
 			plotRAMLoad(userIn, nameOfGame)
+		elif userInput == '6':
+			fanSpeedPlot(userIn, nameOfGame) 
 		else:
 			print("Thank you and have a nice day")
 	except Exception as Argument: 
